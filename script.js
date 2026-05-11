@@ -1,6 +1,25 @@
-let titulo = document.getElementById("titulo");
+/* LOADING */
 
-let texto = "Aprenda programação do zero 😎";
+setTimeout(() => {
+
+  const loading =
+    document.getElementById("loading");
+
+  if(loading){
+
+    loading.classList.add("sumir");
+
+  }
+
+}, 3000);
+
+/* TÍTULO */
+
+let titulo =
+  document.getElementById("titulo");
+
+let texto =
+  "Aprenda programação do zero 😎";
 
 let contador = 0;
 
@@ -10,7 +29,8 @@ function digitar(){
 
   if(contador < texto.length){
 
-    titulo.textContent += texto.charAt(contador);
+    titulo.textContent +=
+      texto.charAt(contador);
 
     contador++;
 
@@ -240,7 +260,8 @@ function buscarProjeto(){
 
 function abrirModal(index){
 
-  let projeto = projetos[index];
+  let projeto =
+    projetos[index];
 
   document
     .getElementById("modal")
@@ -248,7 +269,8 @@ function abrirModal(index){
 
   document
     .getElementById("modalTitulo")
-    .textContent = projeto.nome;
+    .textContent =
+      projeto.nome;
 
   document
     .getElementById("modalDescricao")
@@ -476,21 +498,6 @@ window.addEventListener("scroll", revelar);
 
 revelar();
 
-/* LOADING */
-
-window.addEventListener("load", () => {
-
-  const loading =
-    document.getElementById("loading");
-
-  setTimeout(() => {
-
-    loading.classList.add("sumir");
-
-  }, 3000);
-
-});
-
 /* CURSOR NEON */
 
 const cursor =
@@ -498,22 +505,34 @@ const cursor =
 
 document.addEventListener("mousemove", (e) => {
 
-  cursor.style.left =
-    e.clientX + "px";
+  if(cursor){
 
-  cursor.style.top =
-    e.clientY + "px";
+    cursor.style.left =
+      e.clientX + "px";
+
+    cursor.style.top =
+      e.clientY + "px";
+
+  }
 
 });
 
 document.addEventListener("mousedown", () => {
 
-  cursor.classList.add("clicando");
+  if(cursor){
+
+    cursor.classList.add("clicando");
+
+  }
 
 });
 
 document.addEventListener("mouseup", () => {
 
-  cursor.classList.remove("clicando");
+  if(cursor){
+
+    cursor.classList.remove("clicando");
+
+  }
 
 });
