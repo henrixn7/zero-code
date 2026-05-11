@@ -101,7 +101,7 @@ let projetos = [
       "Meu primeiro site profissional de programação.",
 
     imagem:
-      "img/projeto1.png",
+      "projeto1.png",
 
     tecnologia:
       "HTML • CSS • JavaScript",
@@ -117,7 +117,7 @@ let projetos = [
       "Página moderna criada para treinar frontend.",
 
     imagem:
-      "img/projeto2.png",
+      "projeto2.png",
 
     tecnologia:
       "HTML • CSS",
@@ -133,7 +133,7 @@ let projetos = [
       "Interface estilo hacker com terminal animado.",
 
     imagem:
-      "img/projeto3.jpg",
+      "projeto3.jpg",
 
     tecnologia:
       "JavaScript • CSS",
