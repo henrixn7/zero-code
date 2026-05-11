@@ -2,22 +2,58 @@
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Zero Code 🚀</title>
 
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
+
 </head>
 
 <body>
 
+  <!-- LOADING -->
+
+  <div id="loading">
+
+    <h2>
+      ZERO<span>CODE</span>
+    </h2>
+
+    <p>
+      Inicializando sistema...
+    </p>
+
+  </div>
+
+  <!-- CURSOR -->
+
+  <div class="cursor"></div>
+
+  <!-- PARTÍCULAS -->
+
   <canvas id="particulas"></canvas>
+
+  <!-- HEADER -->
 
   <header>
 
@@ -27,11 +63,17 @@
 
     <div class="header-buttons">
 
-      <button class="tema-btn" onclick="trocarTema()">
+      <button
+        class="tema-btn"
+        onclick="trocarTema()"
+      >
         🌙
       </button>
 
-      <button class="menu-btn" onclick="abrirMenu()">
+      <button
+        class="menu-btn"
+        onclick="abrirMenu()"
+      >
         ☰
       </button>
 
@@ -39,23 +81,44 @@
 
     <nav id="menu">
 
-      <a href="#inicio">Início</a>
+      <a href="#inicio">
+        Início
+      </a>
 
-      <a href="#sobre">Sobre</a>
+      <a href="#sobre">
+        Sobre
+      </a>
 
-      <a href="#tecnologias">Tecnologias</a>
+      <a href="#tecnologias">
+        Tecnologias
+      </a>
 
-      <a href="#roadmap">Roadmap</a>
+      <a href="#roadmap">
+        Roadmap
+      </a>
 
-      <a href="#projetos">Projetos</a>
+      <a href="#projetos">
+        Projetos
+      </a>
 
-      <a href="#contato">Contato</a>
+      <a href="#objetivos">
+        Objetivos
+      </a>
+
+      <a href="#contato">
+        Contato
+      </a>
 
     </nav>
 
   </header>
 
-  <section class="hero" id="inicio">
+  <!-- HERO -->
+
+  <section
+    class="hero"
+    id="inicio"
+  >
 
     <div class="hero-text animar">
 
@@ -66,8 +129,10 @@
       <h1 id="titulo"></h1>
 
       <p>
-        Um projeto criado para mostrar minha evolução como desenvolvedor,
-        aprendendo HTML, CSS, JavaScript e tecnologia na prática.
+        Um projeto criado para mostrar minha evolução
+        como desenvolvedor,
+        aprendendo HTML, CSS, JavaScript
+        e tecnologia na prática.
       </p>
 
       <div class="hero-buttons">
@@ -81,6 +146,8 @@
         </a>
 
       </div>
+
+      <!-- TERMINAL -->
 
       <div class="terminal">
 
@@ -108,21 +175,38 @@
 
   </section>
 
-  <section class="sobre reveal" id="sobre">
+  <!-- SOBRE -->
 
-    <h2>Sobre o ZERO CODE</h2>
+  <section
+    class="sobre reveal"
+    id="sobre"
+  >
+
+    <h2>
+      Sobre o ZERO CODE
+    </h2>
 
     <p>
-      O ZERO CODE nasceu para acompanhar minha jornada na programação.
-      Aqui vou criar projetos, estudar desenvolvimento web,
-      aprender novas tecnologias e evoluir do absoluto zero.
+      O ZERO CODE nasceu para acompanhar
+      minha jornada na programação.
+      Aqui vou criar projetos,
+      estudar desenvolvimento web,
+      aprender novas tecnologias
+      e evoluir do absoluto zero.
     </p>
 
   </section>
 
-  <section class="tecnologias reveal" id="tecnologias">
+  <!-- TECNOLOGIAS -->
 
-    <h2>Tecnologias que estou aprendendo</h2>
+  <section
+    class="tecnologias reveal"
+    id="tecnologias"
+  >
+
+    <h2>
+      Tecnologias que estou aprendendo
+    </h2>
 
     <div class="tech-cards">
 
@@ -133,7 +217,8 @@
         <h3>HTML</h3>
 
         <p>
-          Estrutura das páginas, organização do conteúdo
+          Estrutura das páginas,
+          organização do conteúdo
           e criação de sites modernos.
         </p>
 
@@ -146,7 +231,9 @@
         <h3>CSS</h3>
 
         <p>
-          Estilização, animações, responsividade
+          Estilização,
+          animações,
+          responsividade
           e design profissional.
         </p>
 
@@ -159,7 +246,8 @@
         <h3>JavaScript</h3>
 
         <p>
-          Interatividade, lógica de programação
+          Interatividade,
+          lógica de programação
           e funcionalidades dinâmicas.
         </p>
 
@@ -172,8 +260,9 @@
         <h3>GitHub</h3>
 
         <p>
-          Hospedagem de projetos, versionamento
-          de código e deploy online.
+          Hospedagem de projetos,
+          versionamento de código
+          e deploy online.
         </p>
 
       </div>
@@ -182,9 +271,16 @@
 
   </section>
 
-  <section class="roadmap reveal" id="roadmap">
+  <!-- ROADMAP -->
 
-    <h2>Roadmap de Estudos</h2>
+  <section
+    class="roadmap reveal"
+    id="roadmap"
+  >
+
+    <h2>
+      Roadmap de Estudos
+    </h2>
 
     <div class="roadmap-cards">
 
@@ -193,7 +289,8 @@
         <h3>1. HTML</h3>
 
         <p>
-          Estrutura das páginas e organização do conteúdo.
+          Estrutura das páginas
+          e organização do conteúdo.
         </p>
 
       </div>
@@ -203,7 +300,10 @@
         <h3>2. CSS</h3>
 
         <p>
-          Visual, responsividade, animações e layouts modernos.
+          Visual,
+          responsividade,
+          animações
+          e layouts modernos.
         </p>
 
       </div>
@@ -213,7 +313,10 @@
         <h3>3. JavaScript</h3>
 
         <p>
-          Lógica, funções, interatividade e projetos reais.
+          Lógica,
+          funções,
+          interatividade
+          e projetos reais.
         </p>
 
       </div>
@@ -223,7 +326,10 @@
         <h3>4. Projetos</h3>
 
         <p>
-          Criação de sites, portfólios, landing pages e sistemas.
+          Criação de sites,
+          portfólios,
+          landing pages
+          e sistemas.
         </p>
 
       </div>
@@ -232,9 +338,16 @@
 
   </section>
 
-  <section class="projetos reveal" id="projetos">
+  <!-- PROJETOS -->
 
-    <h2>Meus Projetos</h2>
+  <section
+    class="projetos reveal"
+    id="projetos"
+  >
+
+    <h2>
+      Meus Projetos
+    </h2>
 
     <input
       type="text"
@@ -243,17 +356,94 @@
       onkeyup="buscarProjeto()"
     >
 
-    <div class="cards" id="cards"></div>
+    <div
+      class="cards"
+      id="cards"
+    ></div>
 
   </section>
 
-  <section class="contato reveal" id="contato">
+  <!-- OBJETIVOS -->
 
-    <h2>Contato</h2>
+  <section
+    class="objetivos reveal"
+    id="objetivos"
+  >
+
+    <h2>
+      Meus Objetivos
+    </h2>
+
+    <div class="objetivos-cards">
+
+      <div class="objetivo-card">
+
+        <span>💻</span>
+
+        <h3>
+          Virar Desenvolvedor
+        </h3>
+
+        <p>
+          Aprender programação do zero
+          e trabalhar criando sites
+          e sistemas profissionais.
+        </p>
+
+      </div>
+
+      <div class="objetivo-card">
+
+        <span>🚀</span>
+
+        <h3>
+          Criar Projetos Reais
+        </h3>
+
+        <p>
+          Desenvolver projetos modernos
+          para ganhar experiência
+          e evoluir constantemente.
+        </p>
+
+      </div>
+
+      <div class="objetivo-card">
+
+        <span>🌎</span>
+
+        <h3>
+          Trabalhar Online
+        </h3>
+
+        <p>
+          Conseguir renda online
+          através da programação
+          e da tecnologia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTATO -->
+
+  <section
+    class="contato reveal"
+    id="contato"
+  >
+
+    <h2>
+      Contato
+    </h2>
 
     <p>
       Instagram:
-      <strong>@zerocode.exxe</strong>
+      <strong>
+        @zerocode.exxe
+      </strong>
     </p>
 
     <a
@@ -266,19 +456,30 @@
 
   </section>
 
+  <!-- FOOTER -->
+
   <footer>
 
     <p>
-      © 2026 ZERO CODE — Todos os direitos reservados.
+      © 2026 ZERO CODE —
+      Todos os direitos reservados.
     </p>
 
   </footer>
 
-  <div class="modal" id="modal">
+  <!-- MODAL -->
+
+  <div
+    class="modal"
+    id="modal"
+  >
 
     <div class="modal-conteudo">
 
-      <span class="fechar" onclick="fecharModal()">
+      <span
+        class="fechar"
+        onclick="fecharModal()"
+      >
         ×
       </span>
 

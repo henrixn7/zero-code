@@ -442,7 +442,7 @@ window.addEventListener("resize", () => {
 
 });
 
-/* REVEAL ANIMATION */
+/* REVEAL */
 
 function revelar(){
 
@@ -475,3 +475,45 @@ function revelar(){
 window.addEventListener("scroll", revelar);
 
 revelar();
+
+/* LOADING */
+
+window.addEventListener("load", () => {
+
+  const loading =
+    document.getElementById("loading");
+
+  setTimeout(() => {
+
+    loading.classList.add("sumir");
+
+  }, 1500);
+
+});
+
+/* CURSOR NEON */
+
+const cursor =
+  document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+
+  cursor.style.left =
+    e.clientX + "px";
+
+  cursor.style.top =
+    e.clientY + "px";
+
+});
+
+document.addEventListener("mousedown", () => {
+
+  cursor.classList.add("clicando");
+
+});
+
+document.addEventListener("mouseup", () => {
+
+  cursor.classList.remove("clicando");
+
+});
