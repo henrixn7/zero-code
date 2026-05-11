@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zero Code 🚀</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <canvas id="particulas"></canvas>
+
+  <header>
+
+    <h2 class="logo">ZERO<span>CODE</span></h2>
+
+    <div class="header-buttons">
+      <button class="tema-btn" onclick="trocarTema()">🌙</button>
+      <button class="menu-btn" onclick="abrirMenu()">☰</button>
+    </div>
+
+    <nav id="menu">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+  </header>
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-text animar">
+
+      <span class="tag">
+        Aprendendo programação do zero
+      </span>
+
+      <h1 id="titulo"></h1>
+
+      <p>
+        Um projeto criado para mostrar minha evolução como desenvolvedor,
+        aprendendo HTML, CSS, JavaScript e tecnologia na prática.
+      </p>
+
+      <div class="hero-buttons">
+
+        <button onclick="entrar()">
+          Começar Agora
+        </button>
+
+        <a href="#projetos">
+          Ver Projetos
+        </a>
+
+      </div>
+
+      <div class="terminal">
+
+        <div class="terminal-top">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="terminal-body">
+          <p id="terminalTexto"></p>
+        </div>
+
+      </div>
+
+      <p id="mensagem"></p>
+
+      <div id="relogio"></div>
+
+    </div>
+
+  </section>
+
+  <section class="sobre" id="sobre">
+
+    <h2>Sobre o ZERO CODE</h2>
+
+    <p>
+      O ZERO CODE nasceu para acompanhar minha jornada na programação.
+      Aqui vou criar projetos, estudar desenvolvimento web,
+      aprender novas tecnologias e evoluir do absoluto zero.
+    </p>
+
+  </section>
+
+  <section class="tecnologias" id="tecnologias">
+
+    <h2>Tecnologias que estou aprendendo</h2>
+
+    <div class="tech-cards">
+
+      <div class="tech-card">
+        <span>🌐</span>
+
+        <h3>HTML</h3>
+
+        <p>
+          Estrutura das páginas, organização do conteúdo
+          e criação de sites modernos.
+        </p>
+      </div>
+
+      <div class="tech-card">
+        <span>🎨</span>
+
+        <h3>CSS</h3>
+
+        <p>
+          Estilização, animações, responsividade
+          e design profissional.
+        </p>
+      </div>
+
+      <div class="tech-card">
+        <span>⚡</span>
+
+        <h3>JavaScript</h3>
+
+        <p>
+          Interatividade, lógica de programação
+          e funcionalidades dinâmicas.
+        </p>
+      </div>
+
+      <div class="tech-card">
+        <span>🐱</span>
+
+        <h3>GitHub</h3>
+
+        <p>
+          Hospedagem de projetos, versionamento
+          de código e deploy online.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="roadmap" id="roadmap">
+
+    <h2>Roadmap de Estudos</h2>
+
+    <div class="roadmap-cards">
+
+      <div class="road-card">
+
+        <h3>1. HTML</h3>
+
+        <p>
+          Estrutura das páginas e organização do conteúdo.
+        </p>
+
+      </div>
+
+      <div class="road-card">
+
+        <h3>2. CSS</h3>
+
+        <p>
+          Visual, responsividade, animações e layouts modernos.
+        </p>
+
+      </div>
+
+      <div class="road-card">
+
+        <h3>3. JavaScript</h3>
+
+        <p>
+          Lógica, funções, interatividade e projetos reais.
+        </p>
+
+      </div>
+
+      <div class="road-card">
+
+        <h3>4. Projetos</h3>
+
+        <p>
+          Criação de sites, portfólios, landing pages e sistemas.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="projetos" id="projetos">
+
+    <h2>Meus Projetos</h2>
+
+    <input
+      type="text"
+      id="busca"
+      placeholder="Buscar projeto..."
+      onkeyup="buscarProjeto()"
+    >
+
+    <div class="cards" id="cards"></div>
+
+  </section>
+
+  <section class="contato" id="contato">
+
+    <h2>Contato</h2>
+
+    <p>
+      Instagram:
+      <strong>@zerocode.exxe</strong>
+    </p>
+
+    <a
+      class="btn-contato"
+      href="https://www.instagram.com/zerocode.exxe/"
+      target="_blank"
+    >
+      Chamar no Instagram
+    </a>
+
+  </section>
+
+  <footer>
+
+    <p>
+      © 2026 ZERO CODE — Todos os direitos reservados.
+    </p>
+
+  </footer>
+
+  <div class="modal" id="modal">
+
+    <div class="modal-conteudo">
+
+      <span class="fechar" onclick="fecharModal()">×</span>
+
+      <h2 id="modalTitulo"></h2>
+
+      <p id="modalDescricao"></p>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
