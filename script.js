@@ -487,7 +487,7 @@ window.addEventListener("load", () => {
 
     loading.classList.add("sumir");
 
-  }, 1500);
+  }, 3000);
 
 });
 
