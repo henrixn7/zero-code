@@ -1,353 +1,562 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Zero Code 🚀</title>
 
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen">
+    <div class="boot-content">
+      <h1>ZERO<span>CODE</span></h1>
+      <div id="boot-text"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <div class="login-box">
+      <h1>ZERO<span>CODE</span></h1>
+
+      <p class="login-sub">
+        Sistema protegido • acesso dev
+      </p>
+
+      <input type="text" id="usuario" placeholder="Usuário">
+      <input type="password" id="senha" placeholder="Senha">
+
+      <button onclick="entrarSistema()">
+        Entrar no Sistema
+      </button>
+
+      <button class="btn-cadastro" onclick="abrirCadastro()">
+        Fazer Cadastro
+      </button>
+
+      <div id="cadastro-box">
+
+        <input type="text" id="cadNome" placeholder="Seu nome">
+
+        <input type="text" id="cadWhatsapp" placeholder="Seu WhatsApp">
+
+        <select id="cadServico">
+          <option value="">Serviço desejado</option>
+          <option value="Manutenção de celular">Manutenção de celular</option>
+          <option value="Desbloqueio / Software">Desbloqueio / Software</option>
+          <option value="Formatação / Sistema">Formatação / Sistema</option>
+          <option value="Criação de site">Criação de site</option>
+          <option value="Outro serviço">Outro serviço</option>
+        </select>
+
+        <textarea id="cadMensagem" placeholder="Explique rapidamente o que você precisa"></textarea>
+
+        <button onclick="enviarCadastro()">
+          Enviar Cadastro no WhatsApp
+        </button>
+
+      </div>
+
+      <p id="erro-login"></p>
+    </div>
+  </div>
+
   <!-- LOADING -->
-
   <div id="loading">
-
-    <h2>
-      ZERO<span>CODE</span>
-    </h2>
-
-    <p>
-      Inicializando sistema...
-    </p>
-
+    <h2>ZERO<span>CODE</span></h2>
+    <p>Inicializando sistema...</p>
   </div>
 
   <!-- CURSOR -->
-
   <div class="cursor"></div>
 
-  <!-- PARTÍCULAS -->
+  <!-- MATRIX -->
+  <canvas id="matrix"></canvas>
 
+  <!-- PARTÍCULAS -->
   <canvas id="particulas"></canvas>
 
   <!-- HEADER -->
-
   <header>
-
-    <h2 class="logo">
-      ZERO<span>CODE</span>
-    </h2>
+    <h2 class="logo">ZERO<span>CODE</span></h2>
 
     <div class="header-buttons">
-
-      <button
-        class="tema-btn"
-        onclick="trocarTema()"
-      >
-        🌙
-      </button>
-
-      <button
-        class="menu-btn"
-        onclick="abrirMenu()"
-      >
-        ☰
-      </button>
-
+      <button class="tema-btn" onclick="trocarTema()">🌙</button>
+      <button class="menu-btn" onclick="abrirMenu()">☰</button>
     </div>
 
     <nav id="menu">
-
-      <a href="#inicio">
-        Início
-      </a>
-
-      <a href="#sobre">
-        Sobre
-      </a>
-
-      <a href="#tecnologias">
-        Tecnologias
-      </a>
-
-      <a href="#roadmap">
-        Roadmap
-      </a>
-
-      <a href="#projetos">
-        Projetos
-      </a>
-
-      <a href="#objetivos">
-        Objetivos
-      </a>
-
-      <a href="#contato">
-        Contato
-      </a>
-
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#contato">Contato</a>
     </nav>
-
   </header>
 
   <!-- HERO -->
-
-  <section
-    class="hero"
-    id="inicio"
-  >
-
+  <section class="hero" id="inicio">
     <div class="hero-text animar">
 
-      <span class="tag">
-        Aprendendo programação do zero
-      </span>
+      <span class="tag">Aprendendo programação do zero</span>
 
       <h1 id="titulo"></h1>
 
       <p>
-        Um projeto criado para mostrar minha evolução
-        como desenvolvedor,
-        aprendendo HTML, CSS, JavaScript
-        e tecnologia na prática.
+        Um projeto criado para mostrar minha evolução como desenvolvedor,
+        aprendendo HTML, CSS, JavaScript e tecnologia na prática.
       </p>
 
       <div class="hero-buttons">
-
-        <button onclick="entrar()">
-          Começar Agora
-        </button>
-
-        <a href="#projetos">
-          Ver Projetos
-        </a>
-
+        <button onclick="entrar()">Começar Agora</button>
+        <a href="#projetos">Ver Projetos</a>
       </div>
 
-      <!-- TERMINAL -->
-
       <div class="terminal">
-
         <div class="terminal-top">
-
           <span></span>
           <span></span>
           <span></span>
-
         </div>
 
         <div class="terminal-body">
-
           <p id="terminalTexto"></p>
-
         </div>
-
       </div>
 
       <p id="mensagem"></p>
 
       <div id="relogio"></div>
 
+      <div class="dashboard-dev">
+
+        <div class="dash-card">
+          <span>🟢</span>
+          <h3>Sistema</h3>
+          <p>Online</p>
+        </div>
+
+        <div class="dash-card">
+          <span>💻</span>
+          <h3>Projetos</h3>
+          <p>3 ativos</p>
+        </div>
+
+        <div class="dash-card">
+          <span>⚡</span>
+          <h3>JavaScript</h3>
+          <p>Em evolução</p>
+        </div>
+
+        <div class="dash-card">
+          <span>🚀</span>
+          <h3>Nível DEV</h3>
+          <p>Iniciante+</p>
+        </div>
+
+      </div>
+
+      <div class="ia-panel">
+
+        <div class="ia-top">
+          <span class="ia-dot"></span>
+          <strong>ZERO AI</strong>
+          <small>online</small>
+        </div>
+
+        <div class="ia-body">
+          <p id="iaTexto"></p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLATAFORMA -->
+  <section class="plataforma reveal" id="plataforma" style="display: none;">
+
+    <div class="sidebar-dev">
+
+      <h2>ZERO</h2>
+
+      <button class="btn-toggle-sidebar" onclick="toggleSidebar()">
+        ☰
+      </button>
+
+      <a href="#inicio">🏠 Início</a>
+      <a href="#plataforma">💻 Dashboard</a>
+      <a href="#projetos">🚀 Projetos</a>
+      <a href="#servicos">🛠 Serviços</a>
+      <a href="#contato">📱 Contato</a>
+
+    </div>
+
+    <div class="plataforma-conteudo">
+
+      <div class="topo-dashboard">
+
+  <div class="topo-esquerda">
+
+    <span class="status-online">
+      🟢 Sistema Online
+    </span>
+
+    <h2>
+      Dashboard ZERO CODE
+    </h2>
+
+    <p class="plataforma-sub">
+      Bem-vindo de volta, Developer 🚀
+    </p>
+
+  </div>
+
+  <div class="topo-direita">
+
+    <div class="mini-status">
+      <strong>Projetos</strong>
+      <span>12</span>
+    </div>
+
+    <div class="mini-status">
+      <strong>Nível</strong>
+      <span>DEV</span>
+    </div>
+
+    <button class="btn-sair" onclick="sairSistema()">
+      Sair
+    </button>
+
+  </div>
+
+</div>
+
+      <!-- TERMINAL DEV -->
+      <div class="terminal-dev">
+
+        <div class="terminal-header">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="terminal-content">
+          <p id="terminalHack"></p>
+        </div>
+
+      </div>
+
+      <!-- DASHBOARD -->
+      <div class="dev-dashboard">
+
+       <div class="dev-box glow-green">
+
+  <div class="dev-top">
+    <span>🟢</span>
+    <small>Sistema</small>
+  </div>
+
+  <h3>ONLINE</h3>
+
+  <div class="barra-status">
+    <div class="barra-fill barra-green"></div>
+  </div>
+
+  <p>Todos os módulos funcionando.</p>
+
+</div>
+
+<div class="dev-box glow-blue">
+
+  <div class="dev-top">
+    <span>💻</span>
+    <small>Projetos</small>
+  </div>
+
+  <h3>12</h3>
+
+  <div class="barra-status">
+    <div class="barra-fill barra-blue"></div>
+  </div>
+
+  <p>Projetos ativos em desenvolvimento.</p>
+
+</div>
+
+<div class="dev-box glow-yellow">
+
+  <div class="dev-top">
+    <span>⚡</span>
+    <small>Skills</small>
+  </div>
+
+  <h3>HTML • CSS • JS</h3>
+
+  <div class="barra-status">
+    <div class="barra-fill barra-yellow"></div>
+  </div>
+
+  <p>Evoluindo todos os dias.</p>
+
+</div>
+
+<div class="dev-box glow-purple">
+
+  <div class="dev-top">
+    <span>🚀</span>
+    <small>Nível</small>
+  </div>
+
+  <h3>DEV EVOLUTION</h3>
+
+  <div class="barra-status">
+    <div class="barra-fill barra-purple"></div>
+  </div>
+
+  <p>Jornada iniciada com sucesso.</p>
+
+</div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="skills-dev">
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>HTML</span>
+            <span>80%</span>
+          </div>
+
+          <div class="barra">
+            <div class="progresso html"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>CSS</span>
+            <span>65%</span>
+          </div>
+
+          <div class="barra">
+            <div class="progresso css"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-top">
+            <span>JavaScript</span>
+            <span>35%</span>
+          </div>
+
+          <div class="barra">
+            <div class="progresso js"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EDITOR + CHAT -->
+      <div class="editor-chat-grid">
+
+        <div class="code-editor-fake">
+
+          <div class="editor-top">
+
+            <div class="editor-buttons">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <p>index.html</p>
+
+          </div>
+
+          <div class="editor-body">
+            <p><span>01</span> &lt;section class="zero-code"&gt;</p>
+            <p><span>02</span> &nbsp;&nbsp;&lt;h1&gt;Aprendendo do zero&lt;/h1&gt;</p>
+            <p><span>03</span> &nbsp;&nbsp;&lt;p&gt;HTML, CSS e JavaScript&lt;/p&gt;</p>
+            <p><span>04</span> &nbsp;&nbsp;&lt;button&gt;Começar jornada&lt;/button&gt;</p>
+            <p><span>05</span> &lt;/section&gt;</p>
+          </div>
+
+        </div>
+
+        <div class="chat-ia-fake">
+
+          <div class="chat-top">
+            <h3>🤖 ZERO AI</h3>
+            <span>online</span>
+          </div>
+
+          <div class="chat-mensagens" id="chatMensagens">
+            <div class="msg ia">
+              Olá, eu sou a ZERO AI. Me pergunte algo sobre programação 🚀
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <input type="text" id="perguntaIA" placeholder="Digite sua pergunta...">
+            <button onclick="enviarPerguntaIA()">Enviar</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARDS DA PLATAFORMA -->
+      <div class="plataforma-cards">
+
+        <div class="plataforma-card">
+          <span>📚</span>
+          <h3>Meus Cursos</h3>
+          <p>
+            Área dedicada aos estudos de programação,
+            HTML, CSS, JavaScript e tecnologias web.
+          </p>
+        </div>
+
+        <div class="plataforma-card">
+          <span>💻</span>
+          <h3>Projetos</h3>
+          <p>
+            Veja todos os projetos criados durante
+            minha evolução como desenvolvedor.
+          </p>
+        </div>
+
+        <div class="plataforma-card">
+          <span>🤖</span>
+          <h3>ZERO AI</h3>
+          <p>
+            Inteligência artificial integrada para
+            ajudar nos estudos e nos códigos.
+          </p>
+        </div>
+
+        <div class="plataforma-card">
+          <span>🔥</span>
+          <h3>Desafios</h3>
+          <p>
+            Exercícios e desafios para treinar
+            lógica de programação na prática.
+          </p>
+        </div>
+
+        <div class="plataforma-card">
+          <span>📈</span>
+          <h3>Meu Progresso</h3>
+          <p>
+            Acompanhe minha evolução no mundo
+            da programação e tecnologia.
+          </p>
+        </div>
+
+        <div class="plataforma-card">
+          <span>🌎</span>
+          <h3>Comunidade</h3>
+          <p>
+            Espaço para compartilhar ideias,
+            projetos e evolução dev.
+          </p>
+        </div>
+
+      </div>
+
     </div>
 
   </section>
 
   <!-- SOBRE -->
-
-  <section
-    class="sobre reveal"
-    id="sobre"
-  >
-
-    <h2>
-      Sobre o ZERO CODE
-    </h2>
+  <section class="sobre reveal" id="sobre">
+    <h2>Sobre o ZERO CODE</h2>
 
     <p>
-      O ZERO CODE nasceu para acompanhar
-      minha jornada na programação.
-      Aqui vou criar projetos,
-      estudar desenvolvimento web,
-      aprender novas tecnologias
-      e evoluir do absoluto zero.
+      O ZERO CODE nasceu para acompanhar minha jornada na programação.
+      Aqui vou criar projetos, estudar desenvolvimento web, aprender novas
+      tecnologias e evoluir do absoluto zero.
     </p>
-
   </section>
 
   <!-- TECNOLOGIAS -->
-
-  <section
-    class="tecnologias reveal"
-    id="tecnologias"
-  >
-
-    <h2>
-      Tecnologias que estou aprendendo
-    </h2>
+  <section class="tecnologias reveal" id="tecnologias">
+    <h2>Tecnologias que estou aprendendo</h2>
 
     <div class="tech-cards">
 
       <div class="tech-card">
-
         <span>🌐</span>
-
         <h3>HTML</h3>
-
-        <p>
-          Estrutura das páginas,
-          organização do conteúdo
-          e criação de sites modernos.
-        </p>
-
+        <p>Estrutura das páginas, organização do conteúdo e criação de sites modernos.</p>
       </div>
 
       <div class="tech-card">
-
         <span>🎨</span>
-
         <h3>CSS</h3>
-
-        <p>
-          Estilização,
-          animações,
-          responsividade
-          e design profissional.
-        </p>
-
+        <p>Estilização, animações, responsividade e design profissional.</p>
       </div>
 
       <div class="tech-card">
-
         <span>⚡</span>
-
         <h3>JavaScript</h3>
-
-        <p>
-          Interatividade,
-          lógica de programação
-          e funcionalidades dinâmicas.
-        </p>
-
+        <p>Interatividade, lógica de programação e funcionalidades dinâmicas.</p>
       </div>
 
       <div class="tech-card">
-
         <span>🐱</span>
-
         <h3>GitHub</h3>
-
-        <p>
-          Hospedagem de projetos,
-          versionamento de código
-          e deploy online.
-        </p>
-
+        <p>Hospedagem de projetos, versionamento de código e deploy online.</p>
       </div>
 
     </div>
-
   </section>
 
   <!-- ROADMAP -->
-
-  <section
-    class="roadmap reveal"
-    id="roadmap"
-  >
-
-    <h2>
-      Roadmap de Estudos
-    </h2>
+  <section class="roadmap reveal" id="roadmap">
+    <h2>Roadmap de Estudos</h2>
 
     <div class="roadmap-cards">
 
       <div class="road-card">
-
         <h3>1. HTML</h3>
-
-        <p>
-          Estrutura das páginas
-          e organização do conteúdo.
-        </p>
-
+        <p>Estrutura das páginas e organização do conteúdo.</p>
       </div>
 
       <div class="road-card">
-
         <h3>2. CSS</h3>
-
-        <p>
-          Visual,
-          responsividade,
-          animações
-          e layouts modernos.
-        </p>
-
+        <p>Visual, responsividade, animações e layouts modernos.</p>
       </div>
 
       <div class="road-card">
-
         <h3>3. JavaScript</h3>
-
-        <p>
-          Lógica,
-          funções,
-          interatividade
-          e projetos reais.
-        </p>
-
+        <p>Lógica, funções, interatividade e projetos reais.</p>
       </div>
 
       <div class="road-card">
-
         <h3>4. Projetos</h3>
-
-        <p>
-          Criação de sites,
-          portfólios,
-          landing pages
-          e sistemas.
-        </p>
-
+        <p>Criação de sites, portfólios, landing pages e sistemas.</p>
       </div>
 
     </div>
-
   </section>
 
   <!-- PROJETOS -->
-
-  <section
-    class="projetos reveal"
-    id="projetos"
-  >
-
-    <h2>
-      Meus Projetos
-    </h2>
+  <section class="projetos reveal" id="projetos">
+    <h2>Meus Projetos</h2>
 
     <input
       type="text"
@@ -356,94 +565,94 @@
       onkeyup="buscarProjeto()"
     >
 
-    <div
-      class="cards"
-      id="cards"
-    ></div>
-
+    <div class="cards" id="cards"></div>
   </section>
 
-  <!-- OBJETIVOS -->
+  <!-- SERVIÇOS -->
+  <section class="servicos reveal" id="servicos">
 
-  <section
-    class="objetivos reveal"
-    id="objetivos"
-  >
+    <h2>Serviços Tech</h2>
 
-    <h2>
-      Meus Objetivos
-    </h2>
+    <div class="servicos-cards">
 
-    <div class="objetivos-cards">
+      <div class="servico-card">
+        <span>📱</span>
+        <h3>Manutenção</h3>
+        <p>
+          Assistência técnica especializada
+          em celulares, tablets,
+          notebooks e computadores.
+        </p>
+      </div>
 
-      <div class="objetivo-card">
+      <div class="servico-card">
+        <span>🔓</span>
+        <h3>Desbloqueios</h3>
+        <p>
+          Serviços avançados de software,
+          remoção de bloqueios,
+          FRP, contas e sistemas.
+        </p>
+      </div>
 
+      <div class="servico-card">
         <span>💻</span>
-
-        <h3>
-          Virar Desenvolvedor
-        </h3>
-
+        <h3>Sistemas</h3>
         <p>
-          Aprender programação do zero
-          e trabalhar criando sites
-          e sistemas profissionais.
+          Formatação,
+          instalação de sistemas,
+          otimização e suporte técnico.
         </p>
-
       </div>
 
-      <div class="objetivo-card">
-
-        <span>🚀</span>
-
-        <h3>
-          Criar Projetos Reais
-        </h3>
-
+      <div class="servico-card">
+        <span>🌐</span>
+        <h3>Criação de Sites</h3>
         <p>
-          Desenvolver projetos modernos
-          para ganhar experiência
-          e evoluir constantemente.
+          Desenvolvimento de sites modernos,
+          landing pages,
+          portfólios e páginas comerciais.
         </p>
-
-      </div>
-
-      <div class="objetivo-card">
-
-        <span>🌎</span>
-
-        <h3>
-          Trabalhar Online
-        </h3>
-
-        <p>
-          Conseguir renda online
-          através da programação
-          e da tecnologia.
-        </p>
-
       </div>
 
     </div>
 
   </section>
 
+  <!-- OBJETIVOS -->
+  <section class="objetivos reveal" id="objetivos">
+    <h2>Meus Objetivos</h2>
+
+    <div class="objetivos-cards">
+
+      <div class="objetivo-card">
+        <span>💻</span>
+        <h3>Virar Desenvolvedor</h3>
+        <p>Aprender programação do zero e trabalhar criando sites e sistemas profissionais.</p>
+      </div>
+
+      <div class="objetivo-card">
+        <span>🚀</span>
+        <h3>Criar Projetos Reais</h3>
+        <p>Desenvolver projetos modernos para ganhar experiência e evoluir constantemente.</p>
+      </div>
+
+      <div class="objetivo-card">
+        <span>🌎</span>
+        <h3>Trabalhar Online</h3>
+        <p>Conseguir renda online através da programação e da tecnologia.</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CONTATO -->
-
-  <section
-    class="contato reveal"
-    id="contato"
-  >
-
-    <h2>
-      Contato
-    </h2>
+  <section class="contato reveal" id="contato">
+    <h2>Contato</h2>
 
     <p>
       Instagram:
-      <strong>
-        @zerocode.exxe
-      </strong>
+      <strong>@zerocode.exxe</strong>
     </p>
 
     <a
@@ -454,41 +663,30 @@
       Chamar no Instagram
     </a>
 
+    <a
+      class="btn-whatsapp"
+      href="https://wa.me/553195428665"
+      target="_blank"
+    >
+      💬 Chamar no WhatsApp
+    </a>
   </section>
 
   <!-- FOOTER -->
-
   <footer>
-
-    <p>
-      © 2026 ZERO CODE —
-      Todos os direitos reservados.
-    </p>
-
+    <p>© 2026 ZERO CODE — Todos os direitos reservados.</p>
   </footer>
 
   <!-- MODAL -->
-
-  <div
-    class="modal"
-    id="modal"
-  >
-
+  <div class="modal" id="modal">
     <div class="modal-conteudo">
 
-      <span
-        class="fechar"
-        onclick="fecharModal()"
-      >
-        ×
-      </span>
+      <span class="fechar" onclick="fecharModal()">×</span>
 
       <h2 id="modalTitulo"></h2>
-
       <p id="modalDescricao"></p>
 
     </div>
-
   </div>
 
   <script src="script.js"></script>
